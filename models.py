@@ -34,10 +34,10 @@ Session = scoped_session(SESSION_FACTORY)
 Base = declarative_base()
 
 
-
+##Create the table to store info about the request and the time to find the sequences
 class TblReqs(Base):
     __tablename__ = 'request'
-    
+
     id = Column(Integer, primary_key = True)
     request = Column(String(255))
     time = Column(String(255))

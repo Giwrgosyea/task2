@@ -3,7 +3,7 @@ from models import Session
 from models import TblReqs
 import os
 
-
+## classes which helps to represent and use the object of Request 
 class Core(object):
 	def __init__(self):
 		self.requests = {}

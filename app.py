@@ -42,7 +42,7 @@ def reqs(number):
 
 		results,time,total=task2(int(number)) ## run function to generate the result
 		core.add_request(time,int(number))
-		print(core.requests)
+		#print(core.requests)
 	
 		with open('text.csv', 'a') as f:
 			writer = csv.writer(f, delimiter=';')
@@ -65,6 +65,8 @@ def health():
 	data_dict={}
 	data_dict["fibonacci (int)"]=[]
 	data_dict["time (sec)"]=[]
+
+	##create to dic to pass in the metrics array to create the corresponding diagramm
 	for i in list(core.requests):
 			data_dict["fibonacci (int)"].append(int(core.requests[i].request))
 			data_dict["time (sec)"].append(float(core.requests[i].time))
