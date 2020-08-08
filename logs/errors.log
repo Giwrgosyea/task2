@@ -23,3 +23,18 @@ ValueError: invalid literal for int() with base 10: 'a'
     results,time,total=task2(int(number)) ## run function to generate the result
 ValueError: invalid literal for int() with base 10: 'a'
 
+[2020-08-08 17:59:49,050] {/Users/georgeyea/Documents/task2/app.py:68} ERROR - Traceback (most recent call last):
+  File "/Users/georgeyea/Documents/task2/app.py", line 45, in reqs
+    searchfile = open('cache.csv', 'rb',encoding='utf-8')
+ValueError: binary mode doesn't take an encoding argument
+
+[2020-08-08 18:00:10,365] {/Users/georgeyea/Documents/task2/app.py:68} ERROR - Traceback (most recent call last):
+  File "/Users/georgeyea/Documents/task2/app.py", line 45, in reqs
+    searchfile = open('cache.csv', 'rb',encoding='utf-8')
+ValueError: binary mode doesn't take an encoding argument
+
+[2020-08-08 18:06:27,968] {/Users/georgeyea/Documents/task2/app.py:70} ERROR - Traceback (most recent call last):
+  File "/Users/georgeyea/Documents/task2/app.py", line 50, in reqs
+    results=int(row[2]) ## add results
+ValueError: invalid literal for int() with base 10: '[[2, 2, 2, 2, 2, 2, 3], [2, 2, 2, 2, 2, 5], [2, 2, 2, 3, 3, 3], [2, 2, 3, 3, 5], [2, 2, 3, 8], [2, 3, 5, 5], [2, 5, 8], [2, 13], [3, 3, 3, 3, 3], [5, 5, 5]]'
+

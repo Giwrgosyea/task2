@@ -40,18 +40,35 @@ def reqs(number):
 	'''
 	try:
 
-		results,time,total=task2(int(number)) ## run function to generate the result
-		core.add_request(time,int(number))
-		#print(core.requests)
-	
-		with open('text.csv', 'a') as f:
-			writer = csv.writer(f, delimiter=';')
-			line=[int(number),float(time)]
-			writer.writerow(line)
-		return render_template("result.html", number=number, results= results,time=float(time),total=total)
+		##Search in cache if I have already that result:
+		result=[]
+		searchfile = open('cache.csv', 'r',encoding='utf-8')
+		reader = csv.reader(searchfile, delimiter = ';')
+		a = int(number)
+		for row in reader:
+			if a == int(row[0]):
+				results=[row[2]] ## add results
+				time=row[1]
+				number=int(row[0])
+				total=len(results)
+				print("cached")
+				return render_template("result.html", number=number, results= results,time=float(time),total=total)
+
+		if result==[]:
+			results,time,total=task2(int(number)) ## run function to generate the result
+
+			core.add_request(time,int(number))
+			#print(core.requests)
+			
+			##write results in cache
+			with open('cache.csv', 'a') as f:
+				writer = csv.writer(f, delimiter=';')
+				line=[int(number),float(time),results,total]
+				writer.writerow(line)
+			return render_template("result.html", number=number, results= results,time=float(time),total=total)
 	except ValueError as e:
 		logging.getLogger('errors').error(traceback.format_exc())
-		return 'Enter a valid number try an integer for example'
+		return 'See logs/errors.log for more info'
 		 
 
 
