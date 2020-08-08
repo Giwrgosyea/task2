@@ -45,8 +45,14 @@ def reqs(number):
 		searchfile = open('cache.csv', 'r',encoding='utf-8')
 		reader = csv.reader(searchfile, delimiter = ';')
 		a = int(number)
+		cache=5
+		counter=0
 		for row in reader:
 			if a == int(row[0]):
+				counter+=1
+				print('c',counter)
+				if counter==cache:
+					break
 				results=[row[2]] ## add results
 				time=row[1]
 				number=int(row[0])
