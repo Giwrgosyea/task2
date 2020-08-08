@@ -42,23 +42,25 @@ def reqs(number):
 
 		##Search in cache if I have already that result:
 		result=[]
-		searchfile = open('cache.csv', 'r',encoding='utf-8')
-		reader = csv.reader(searchfile, delimiter = ';')
-		a = int(number)
-		cache=5
-		counter=0
-		for row in reader:
-			if a == int(row[0]):
-				counter+=1
-				print('c',counter)
-				if counter==cache:
-					break
-				results=[row[2]] ## add results
-				time=row[1]
-				number=int(row[0])
-				total=len(results)
-				print("cached")
-				return render_template("result.html", number=number, results= results,time=float(time),total=total)
+		
+		# searchfile = open('cache.csv', 'r',encoding='utf-8')
+		# reader = csv.reader(searchfile, delimiter = ';')
+		# a = int(number)
+		# cache=5
+		# counter=0
+		# for row in reader:
+		# 	if a == int(row[0]):
+		# 		counter+=1
+		# 		print(row[2][0])
+		# 		print('c',counter)
+		# 		if counter==cache:
+		# 			break
+		# 		results=row[2] ## add results
+		# 		time=row[1]
+		# 		number=int(row[0])
+		# 		total=len(results)
+		# 		print("cached")
+		# 		return render_template("result.html", number=number, results= results,time=float(time),total='cached')
 
 		if result==[]:
 			results,time,total=task2(int(number)) ## run function to generate the result
@@ -69,7 +71,7 @@ def reqs(number):
 			##write results in cache
 			with open('cache.csv', 'a') as f:
 				writer = csv.writer(f, delimiter=';')
-				line=[int(number),float(time),results,total]
+				line=[int(number),float(time),[results],total]
 				writer.writerow(line)
 			return render_template("result.html", number=number, results= results,time=float(time),total=total)
 	except ValueError as e:
