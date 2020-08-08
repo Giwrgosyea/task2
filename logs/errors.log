@@ -1,0 +1,25 @@
+[2020-08-08 11:14:44,449] {/Users/georgeyea/Documents/task2/app.py:54} ERROR - Traceback (most recent call last):
+  File "/Users/georgeyea/Documents/task2/app.py", line 46, in reqs
+    results,time=task2(int(number)) ## run function to generate the result
+ValueError: invalid literal for int() with base 10: '11.1'
+
+[2020-08-08 11:17:11,042] {/Users/georgeyea/Documents/task2/app.py:54} ERROR - Traceback (most recent call last):
+  File "/Users/georgeyea/Documents/task2/app.py", line 46, in reqs
+    results,time=task2(int(number)) ## run function to generate the result
+ValueError: invalid literal for int() with base 10: 'a'
+
+[2020-08-08 11:34:05,775] {/Users/georgeyea/Documents/task2/app.py:53} ERROR - Traceback (most recent call last):
+  File "/Users/georgeyea/Documents/task2/app.py", line 45, in reqs
+    results,time=task2(int(number)) ## run function to generate the result
+ValueError: invalid literal for int() with base 10: 'a'
+
+[2020-08-08 11:43:29,760] {/Users/georgeyea/Documents/task2/app.py:53} ERROR - Traceback (most recent call last):
+  File "/Users/georgeyea/Documents/task2/app.py", line 45, in reqs
+    results,time=task2(int(number)) ## run function to generate the result
+ValueError: invalid literal for int() with base 10: 'a'
+
+[2020-08-08 15:29:01,727] {/Users/georgeyea/Documents/task2/app.py:53} ERROR - Traceback (most recent call last):
+  File "/Users/georgeyea/Documents/task2/app.py", line 43, in reqs
+    results,time,total=task2(int(number)) ## run function to generate the result
+ValueError: invalid literal for int() with base 10: 'a'
+

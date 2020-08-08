@@ -1,0 +1,52 @@
+<!-- This snippet uses Font Awesome 5 Free as a dependency. You can download it at fontawesome.io! -->
+<head>
+    <title>Welcome</title>
+<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}" />
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 col-xl-9 mx-auto">
+        <div class="card card-signin flex-row my-5">
+          <div class="card-img-left d-none d-md-flex">
+             <!-- Background image for card set in CSS! -->
+          </div>
+          <div class="card-body">
+             {% if error %}
+             <h4>Page not found try one of these below....</h4>
+
+             {%endif%}
+            <h5 class="card-title text-center">Welcome to Task2</h5>
+            <p>Try /fib/Number to find the corresponding sequences</p>
+            <a href="/fib/11">Example of Fibonacci 11</a>
+            <br>
+            <br>
+            <p>View health of Application</p>
+            <a href="/health">Health of Application</a>
+
+           <!--  <form class="form-signin">
+              <div class="form-label-group">
+                <input type="text" id="inputUserame" class="form-control" placeholder="Username" required autofocus>
+                <label for="inputUserame">Enter Number</label>
+              </div>
+              <hr>
+
+              
+
+              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">GO!</button>
+              <a class="d-block text-center mt-2 small" href="#">somthing</a>
+              <hr class="my-4">
+             
+            </form> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
